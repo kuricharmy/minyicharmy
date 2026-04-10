@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang TC'}
+    span.s1 {font: 12.0px 'PingFang TC'}
+    span.s2 {font: 12.0px Helvetica}
+    span.s3 {font: 12.0px 'Zapf Dingbats'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-Hant"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Min Yi | Portfolio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">引入</span> Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Playfair+Display:ital@0;1&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-card-bg: #f8f8f8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-accent: #e0e7ff; /* <span class="s1">淡藍色背景</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-accent-dark: #1e40af; /* <span class="s1">經典靛藍色</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-text: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-secondary: #666666;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--color-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-text);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans TC', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.serif {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">基礎卡片樣式</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.portfolio-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.portfolio-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-8px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--color-card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">比例設定</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ratio-hero { aspect-ratio: 16 / 9; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ratio-16-9 { aspect-ratio: 16 / 9; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ratio-3-2 { aspect-ratio: 3 / 2; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ratio-5-4 { aspect-ratio: 5 / 4; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ratio-4-5 { aspect-ratio: 4 / 5; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-wrapper img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.7s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.portfolio-item:hover img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.03);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">網格區塊設計</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.grid-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.row-featured {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.row-portrait {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(1, minmax(0, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.row-portrait { grid-template-columns: repeat(3, minmax(0, 1fr)); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">彈窗樣式</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.99);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade-up {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.8s ease forwards;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(30px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">篩選按鈕啟動狀態：靛藍色底線</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-btn.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--color-accent-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">條列式樣式：靛藍色前綴</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.skill-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.skill-list li::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "—";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-accent-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">詳情頁專屬：圖片樣式</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.img-contain-view {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 80vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: contain;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">網格佈局</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.project-grid-cols-2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(2, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.project-grid-cols-3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(3, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.project-grid-cols-3 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: repeat(2, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.project-grid-cols-2, .project-grid-cols-3 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">特殊類別標籤樣式：靛藍色調</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.badge-portfolio {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--color-accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-accent-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 99px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.2em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">確保</span> text-blue-600 <span class="s1">使用正確的靛藍</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.text-blue-600 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-accent-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">導覽列</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md px-8 py-5 flex justify-between items-center border-b border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-xl font-medium tracking-tighter serif"&gt;Min Yi&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#home" class="hover:text-black transition"&gt;Home&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#portfolio" class="hover:text-black transition"&gt;Works&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#about" class="hover:text-black transition"&gt;About&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">首頁</span> Hero <span class="s1">區</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="home" class="h-[75vh] flex flex-col justify-center items-center text-center px-6 pt-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-3xl fade-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-[10px] uppercase tracking-[0.5em] text-blue-600 font-bold mb-6"&gt;Visual Designer&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl md:text-5xl font-light serif mb-8 leading-tight text-gray-900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Li, Min-Yi</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm md:text-base text-gray-400 leading-relaxed mb-12 max-w-2xl mx-auto"&gt;</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span></span>重視創意概念與細節，具備視覺識別、社群行銷素材設計與插畫設計能力的視覺設計師。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col sm:flex-row justify-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.behance.net/kuricharmy" target="_blank" class="bg-black text-white px-12 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase hover:bg-gray-800 transition-all transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>BEHANCE</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#portfolio" class="px-12 py-4 border border-gray-200 rounded-full text-[10px] font-bold tracking-widest uppercase hover:bg-gray-50 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>VIEW WORKS</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">作品展示區</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="portfolio" class="py-24 px-8 md:px-20 bg-[#fafafa]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">分類導覽</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-light serif mb-2 text-gray-900"&gt;Portfolio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-[10px] text-gray-400 tracking-[0.2em] uppercase"&gt;Graphic Design / Digital Media Design / Speculative Design / Illustration Creation&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="overflow-x-auto w-full md:w-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul id="filter-nav" class="flex space-x-8 text-[10px] tracking-widest uppercase font-bold text-gray-300 whitespace-nowrap pb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="filter-btn active cursor-pointer hover:text-black" onclick="filterWorks('all')"&gt;<span class="s1">全部作品</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="filter-btn cursor-pointer hover:text-black" onclick="filterWorks('portfolio')"&gt;<span class="s1">作品集</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="filter-btn cursor-pointer hover:text-black" onclick="filterWorks('social')"&gt;<span class="s1">社群行銷</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="filter-btn cursor-pointer hover:text-black" onclick="filterWorks('promo')"&gt;<span class="s1">廣告設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">作品網格區</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="works-container"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">特顯區：第一列作品集</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid-row row-featured" data-category-group="featured"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://www.behance.net/gallery/238880563/My-Portfolio" target="_blank" class="portfolio-item block group" data-type="portfolio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-hero shadow-xl ring-1 ring-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vTR1Q5KqL_xVZN53TGlzl0lnDVR74fZYdySCe_kC7MzWmIoQWr8acPLknGBrqYHrfyj5yYfpHyRqSWO/pub?w=1440&amp;h=1080" alt="<span class="s1">我的設計作品集｜</span>Behance"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="bg-white text-black px-6 py-3 rounded-full text-[10px] font-bold tracking-[0.2em]"&gt;VIEW ON BEHANCE&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-8 flex flex-col items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="badge-portfolio"&gt;Main Collection&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl md:text-2xl font-light serif tracking-wide text-gray-900"&gt;<span class="s1">我的設計作品集｜</span>My Design Portfolio&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="mt-3 text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed"&gt;<span class="s1">集結平面設計、包裝設計、動態設計、插畫與跨領域專案等作品。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">次要作品網格</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid-row row-portrait" data-category-group="portrait"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">廣告設計</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="promo" onclick="openModal('work3')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-4-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vQe3h9xD0y2pzQxHv8ywFPR-OFQJkSwkrxbhgF1EyQUmMjjHKO19ssnmyWVDGbeCCQqI-I4K11opR38/pub?w=1418&amp;h=1272" alt="<span class="s1">皮膚管理中心</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Ad Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;<span class="s1">皮膚管理中心｜廣告</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="promo" onclick="openModal('work4')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-4-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vQaAcvGW-qPVRqkCwSjMQurTRtUg2PQAnVa8QTrMBrf-RRZI_KCYihMPJf9-5Nq50QTC53JqfWcvEHX/pub?w=2836&amp;h=3544" alt="<span class="s1">醫美雷射</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Ad Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;<span class="s1">醫美雷射｜廣告</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="promo" onclick="openModal('work_nail')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-4-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vRPWJEzo-JNHuAcB-Phe3RxOqt32r3RRYuqT9t1I4QV21veLhbwDciatmqbQKSjWtzoqR_kBuw2fAvQ/pub?w=4254&amp;h=5316" alt="<span class="s1">美甲工作室</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Ad Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;<span class="s1">美甲工作室｜廣告</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="promo" onclick="openModal('work7')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-4-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vQRbWn-RlsZOjZ1doQ3McBAY5aERTtKt_M9nSy3npnqqD1f6XCMkxElEIskwumma44lDG1qTqT9yhQ0/pub?w=4254&amp;h=5316" alt="<span class="s1">科技人才招募</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Ad Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;<span class="s1">科技人才招募｜廣告</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">社群行銷</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="social" onclick="openModal('work1')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-3-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vRJi6TDUcebMiHrRyHnb8SGrfqektJTgJIPj6VDuZb8xehS8KnFZ6BefycNW5NotmsVZZux0tuJGRYs/pub?w=1440&amp;h=1080" alt="AI<span class="s1">工作坊</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Social Media Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;[Restart.] AI<span class="s1">生成實戰工作坊｜社群行銷</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="portfolio-item" data-type="social" onclick="openModal('work2')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="image-wrapper ratio-5-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vRBxiTgZ5WAiqX-SeSHxpzViBTH4L0s14Ru-43MzR80q0q2ZhLsstHYdo2fAufU_o8vHF0hEukJDaWB/pub?w=1440&amp;h=1080" alt="<span class="s1">貓咖親子日</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[9px] text-blue-600 font-bold tracking-widest uppercase mb-1"&gt;Social Media Design&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xs font-medium tracking-wider"&gt;<span class="s1">貓咖親子日活動｜社群行銷</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">關於我</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about" class="py-24 px-8 md:px-20 bg-white border-t border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-full md:w-1/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="aspect-[1/1] rounded-2xl overflow-hidden shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vSJ665g9XUqUb3KxndFNJWl-S8DNIlXEhyBwuZPsokxkTQW4yzOeisqgJNtuqo2VmCj6CwZsAxsHLXJ/pub?w=1440&amp;h=1080" alt="Min Yi" class="w-full h-full object-cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-full md:w-2/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-light serif mb-6"&gt;<span class="s1">李旻憶</span> Li, Min-Yi&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-sm text-gray-400 leading-relaxed mb-12 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;<span class="s1">畢業於臺灣科技大學設計系商業設計組。</span>&lt;/p&gt;</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;p&gt;</span>熟悉從主視覺發想、版面規劃至延伸宣傳應用的完整設計流程。<span class="s2">&lt;/p&gt;</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;p&gt;</span>重視設計細節，具備視覺識別、社群廣告素材與插畫設計能力，曾製作過不同產業的行銷視覺，能依據產業與目標族群，調整設計風格與呈現方式，並整合於客戶回饋，達成符合需求的成品。<span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-5 pb-2 border-b border-gray-100"&gt;Softwares&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="skill-list text-xs text-gray-500 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Illustrator&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Photoshop&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;InDesign&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Procreate&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;DaVinci Resolve&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Blender&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-5 pb-2 border-b border-gray-100"&gt;Design Skills&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="skill-list text-xs text-gray-500 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;<span class="s1">品牌行銷</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;<span class="s1">視覺識別</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;<span class="s1">行銷素材設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;<span class="s1">插畫設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;<span class="s1">動態設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">頁尾</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="py-24 px-8 text-center bg-white border-t border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mb-8 serif italic text-3xl text-gray-900"&gt;Li, Min-Yi&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mb-12 text-gray-500 text-xs font-medium space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tracking-widest"&gt;kuricharmy@gmail.com&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tracking-widest"&gt;+886 911 900 491&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex justify-center space-x-12 mb-12 text-gray-400 text-[10px] tracking-[0.3em] font-bold uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://www.behance.net/kuricharmy" target="_blank" class="hover:text-black transition"&gt;Behance&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-[9px] tracking-[0.5em] text-gray-300 uppercase"&gt;© 2026 MIN YI. ALL RIGHTS RESERVED.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">作品詳情彈窗</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="project-modal" class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-4xl mx-auto py-24 px-8 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="closeModal()" class="fixed top-12 right-12 text-[10px] tracking-widest uppercase hover:opacity-50 z-[1010] flex items-center bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Close &lt;span class="ml-2 font-sans"&gt;<span class="s3">✕</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="modal-content" class="fade-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">動態內容載入</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">作品集數據</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const projects = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work1: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: "workshop",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "[Restart.] AI<span class="s1">生成實戰工作坊｜社群行銷</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Social Media Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>在視覺上結合符號元素與清晰的資訊層級，強化主題辨識度，同時透過版面編排，來引導觀看動線。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRJi6TDUcebMiHrRyHnb8SGrfqektJTgJIPj6VDuZb8xehS8KnFZ6BefycNW5NotmsVZZux0tuJGRYs/pub?w=1440&amp;h=1080",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vQuUUkRubAeIycc5CHQoioucQvxlvhwktlrT59UqadN1Ncm0phVKJzl185JEqb1GlBTdNWi01reV11i/pub?w=3545&amp;h=3546",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRFePfppxkQ6D75fCdN60Z733GhWhEb4t-lkJtLSmOJvJ1Joe0IgNbjs4ZIr4uoTNiymSfsMT3tiNNs/pub?w=3545&amp;h=3546",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vR-fv0dG9RiqdYdhM7g8uuMYW8jxRD16E0xvEMcb5SNokjkfXd7yXPiEuESoWNT1riZtRvND0AXRqn8/pub?w=3545&amp;h=3546",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vSzvoNKtGviBo5nx-hiV49yssw2EbwNmFWBB2rizn_i6_fcpZgeWEybEJJ4vEK0NCVzMdU5obqb6oGN/pub?w=3545&amp;h=3546",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRqGRCBXAtY1LxMeF_LZ-JO9v7OYfRx0nby1MMBRykq1cL6pJN5PQZZzG6aJ9HmMmkx9c1tlQv2Ikf7/pub?w=3545&amp;h=3546"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work2: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: "cat_cafe",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "<span class="s1">貓咖親子日活動｜社群行銷</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Social Media Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>為吸引親子客群，並強化和樂氛圍與參與意願，透過圖文整合與溫溫暖配色，以插畫繪本的風格營造親和力、降低距離感。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRBxiTgZ5WAiqX-SeSHxpzViBTH4L0s14Ru-43MzR80q0q2ZhLsstHYdo2fAufU_o8vHF0hEukJDaWB/pub?w=1440&amp;h=1080",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRAm1BLhRX_Yr4SPBv5FB9Rj41pjHslU2Bo2c95pY9zP2Gcy0cpdoaQwFQogQOcq4ri9ZfEk0rtY305/pub?w=1440&amp;h=1080",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRFzWoooJ3XVJ3d98eSWPCHNkqlvs7ERJ8LDMWsSgHIwhKnC3vPF0mqaagDYLZrYKgT9Z1gFGnopPuX/pub?w=4253&amp;h=5316",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vSm105AvpfKWnoZWDMtk7xRErZW4F24I1Ja0vMsK-yckUPq1lh1alB6tPVVYqFOkFyjz_mEWHmcIvTG/pub?w=4253&amp;h=5316",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vSTbKCeHR1msNz3QUnh5IrAZKRUTfkXO-YtR0MGgfLSTgCQqGOVnnxGRIniT5A02jKpPi-27xwRfCpw/pub?w=4253&amp;h=5316",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vTVjReHHvi8RDIgdY_B2labLpnMTA4qI6MCGLQ9INSrxAxsldpeBYAe3seVsPC-rx_mJDuYxdjTvp43/pub?w=4253&amp;h=5316",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRcnQZVc0Tf7NGUL4P776YuSfuQewFrdyp63AP_jXGZM9a-mVz2DxuhgFJR_mEdNhcOtKs0eu1eA1cz/pub?w=4253&amp;h=5316"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work3: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "<span class="s1">皮膚管理中心｜廣告</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Ad Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>乾淨、清新的低彩度色系建立信任感，運用簡約編排符合產業調性。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: ["https://docs.google.com/drawings/d/e/2PACX-1vQe3h9xD0y2pzQxHv8ywFPR-OFQJkSwkrxbhgF1EyQUmMjjHKO19ssnmyWVDGbeCCQqI-I4K11opR38/pub?w=1418&amp;h=1272"]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work4: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "<span class="s1">醫美雷射｜廣告</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Ad Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>透過柔和膚色和白色衣物傳遞清爽感，選用低彩度藍色建立專業與安心的視覺印象。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: ["https://docs.google.com/drawings/d/e/2PACX-1vQaAcvGW-qPVRqkCwSjMQurTRtUg2PQAnVa8QTrMBrf-RRZI_KCYihMPJf9-5Nq50QTC53JqfWcvEHX/pub?w=2836&amp;h=3544"]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work7: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "<span class="s1">科技人才招募｜廣告</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Ad Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>強調資訊層級與閱讀動線，讓內容能被快速理解，降低視覺干擾，搭配藍紫色漸層元素增加現代與科技氛圍。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: ["https://docs.google.com/drawings/d/e/2PACX-1vQRbWn-RlsZOjZ1doQ3McBAY5aERTtKt_M9nSy3npnqqD1f6XCMkxElEIskwumma44lDG1qTqT9yhQ0/pub?w=4254&amp;h=5316"]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>work_nail: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: "nail",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: "<span class="s1">美甲工作室｜廣告</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: "Ad Design",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>desc: "</span>以簡約美學為基礎，透過留白與柔和底色，最大呈現美甲師的作品魅力，並提升質感與吸引力。<span class="s2">",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>images: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vRPWJEzo-JNHuAcB-Phe3RxOqt32r3RRYuqT9t1I4QV21veLhbwDciatmqbQKSjWtzoqR_kBuw2fAvQ/pub?w=4254&amp;h=5316",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"https://docs.google.com/drawings/d/e/2PACX-1vS15Z1bjBI99X0Y7Lsi1PXfdxGVMiON8szTtfObxNJArGoErQ2VqfGay2hPbHAr_KNOHD2YrVFhCwjH/pub?w=4254&amp;h=5316"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">篩選功能</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function filterWorks(type) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const btns = document.querySelectorAll('.filter-btn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btns.forEach(btn =&gt; btn.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event) event.target.classList.add('active');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const items = document.querySelectorAll('.portfolio-item');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>items.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (type === 'all' || item.getAttribute('data-type') === type) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>item.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>item.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rows = document.querySelectorAll('.grid-row');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>rows.forEach(row =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const visibleItems = Array.from(row.querySelectorAll('.portfolio-item')).filter(i =&gt; i.style.display !== 'none');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>row.style.display = visibleItems.length === 0 ? 'none' : 'grid';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const modal = document.getElementById('project-modal');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const modalContent = document.getElementById('modal-content');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">開啟彈窗</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openModal(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = projects[id];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!data) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isLongImageCategory = data.type === "Ad Design" || data.type === "Social Media Design";</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const renderImg = (src) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const baseClass = isLongImageCategory ? "img-contain-view" : "w-full h-auto";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `&lt;img src="${src}" class="${baseClass} shadow-sm rounded" onerror="this.src='https://via.placeholder.com/800x450?text=Asset+Not+Found'"&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const coverImage = data.images[0];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const otherImages = data.images.slice(1);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let contentHtml = "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (data.id === 'nail') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="project-grid-cols-2 mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${data.images.map(img =&gt; renderImg(img)).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="max-w-3xl mx-auto text-center md:text-left mb-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[10px] uppercase tracking-[0.4em] text-blue-600 font-bold mb-6"&gt;${data.type}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl font-light serif mb-8"&gt;${data.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-400 leading-relaxed"&gt;${data.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-10 border-t border-gray-100 w-16 mx-auto md:mx-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (data.id === 'workshop') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full mb-16"&gt;${renderImg(coverImage)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="max-w-3xl mx-auto text-center md:text-left mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[10px] uppercase tracking-[0.4em] text-blue-600 font-bold mb-6"&gt;${data.type}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl font-light serif mb-8"&gt;${data.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-400 leading-relaxed"&gt;${data.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-10 border-t border-gray-100 w-16 mx-auto md:mx-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="project-grid-cols-2 mb-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${otherImages.map(img =&gt; renderImg(img)).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (data.id === 'cat_cafe') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full mb-16"&gt;${renderImg(coverImage)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="max-w-3xl mx-auto text-center md:text-left mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[10px] uppercase tracking-[0.4em] text-blue-600 font-bold mb-6"&gt;${data.type}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl font-light serif mb-8"&gt;${data.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-400 leading-relaxed"&gt;${data.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-10 border-t border-gray-100 w-16 mx-auto md:mx-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="project-grid-cols-3 mb-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${otherImages.map(img =&gt; renderImg(img)).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full mb-16"&gt;${renderImg(coverImage)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="max-w-3xl mx-auto text-center md:text-left mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[10px] uppercase tracking-[0.4em] text-blue-600 font-bold mb-6"&gt;${data.type}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl font-light serif mb-8"&gt;${data.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-400 leading-relaxed"&gt;${data.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-10 border-t border-gray-100 w-16 mx-auto md:mx-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col gap-10 mb-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${otherImages.map(img =&gt; renderImg(img)).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>modalContent.innerHTML = contentHtml;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'hidden';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.scrollTop = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">關閉彈窗</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>modal.addEventListener('click', (e) =&gt; { if(e.target === modal) closeModal(); });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
